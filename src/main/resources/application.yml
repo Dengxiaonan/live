@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+
+
+
+
+spring:
+  application:
+    name: requireproject
+  profiles:
+    active: test
+  datasource:
+    url: jdbc:mysql://rm-2ze9238415q95jpfdro.mysql.rds.aliyuncs.com/required?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: r_root
+    password: eHT*PD9BxjmZJx86
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+    jedis:
+      pool:
+        max-active:  8 #最大连接数
+        max-idle: 8  #最大空闲
+        min-idle: 0  #最小空闲p
+
+mybatis:
+  configuration:
+    jdbc-type-for-null: null
+    default-fetch-size: 1000
+    map-underscore-to-camel-case: true
+swagger:
+  title: requireproject
+  description: requireproject project
+  base-package: com.xian.requireproject.controller
+  base-path: /**
+  exclude-path: /error, /ops/**
+  enabled: true
